@@ -1,0 +1,39 @@
+{
+  "saints": [
+    {
+      "id": 1,
+      "name": "Maria",
+      "feastDay": "January 1",
+      "patronage": "Mother of God, all Christians",
+      "description": "The Blessed Virgin Mary, mother of Jesus Christ"
+    },
+    {
+      "id": 2,
+      "name": "Yohani",
+      "feastDay": "June 24",
+      "patronage": "Baptism, converts",
+      "description": "John the Baptist, forerunner of Jesus"
+    },
+    {
+      "id": 3,
+      "name": "Petero",
+      "feastDay": "June 29",
+      "patronage": "Fishermen, church leaders",
+      "description": "Saint Peter, apostle and first pope"
+    },
+    {
+      "id": 4,
+      "name": "Pawulo",
+      "feastDay": "June 29",
+      "patronage": "Missionaries, theologians",
+      "description": "Saint Paul, apostle to the Gentiles"
+    },
+    {
+      "id": 5,
+      "name": "Yosefu",
+      "feastDay": "March 19",
+      "patronage": "Workers, fathers, families",
+      "description": "Saint Joseph, husband of Mary"
+    }
+  ]
+}
