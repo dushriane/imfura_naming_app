@@ -24,11 +24,11 @@ export function translateToKinyarwanda(word: string): string | null {
   const translations: Record<string, string> = {
     'peace': 'amahoro',
     'truth': 'ukuri',
-    'blessing': 'mugisha',
+    'blessing': 'umugisha',
     'sun': 'izuba',
     'love': 'urukundo',
     'hope': 'ibyiringiro',
-    'faith': 'kwizera',
+    'faith': 'ukwizera',
     'joy': 'igisubizo',
   };
   
