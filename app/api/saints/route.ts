@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import saintsData from '@/lib/saints-data.json';
 
 // GET /api/saints?name=...
 // Saint lookup logic
@@ -14,18 +15,18 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    // TODO: Implement saint lookup from saints-data.json
-    // This would search through the saints database
-    
-    // Placeholder response
-    const saint = {
-      name: name,
-      feastDay: 'January 1',
-      patronage: 'Children and families',
-      description: 'A blessed saint'
-    };
+    // Search saints database for matching name (case-insensitive)
+    const normalized = name.toLowerCase().trim();
+    const saint = saintsData.saints.find(
+      s => s.name.toLowerCase() === normalized || s.name.toLowerCase().includes(normalized)
+    );
 
-    return NextResponse.json(saint);
+    if (saint) {
+      return NextResponse.json(saint);
+    }
+
+    // Return null if no saint found
+    return NextResponse.json(null);
   } catch (error) {
     console.error('Error looking up saint:', error);
     return NextResponse.json(
