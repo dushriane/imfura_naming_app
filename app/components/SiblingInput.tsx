@@ -19,11 +19,11 @@ export default function SiblingInput({ onAdd }: SiblingInputProps) {
         type="text"
         name="sibling"
         placeholder="Enter sibling name"
-        className="flex-1 px-4 py-2 border-2 border-[#ffc8dd]/30 rounded-xl focus:outline-none focus:border-[#bde0fe] focus:ring-2 focus:ring-[#bde0fe]/30 transition-all bg-white/50"
+        className="flex-1 px-4 py-2.5 border-2 border-pink-100 dark:border-gray-600 rounded-2xl focus:outline-none focus:border-pink-300 dark:focus:border-pink-500 focus:ring-2 focus:ring-pink-200 dark:focus:ring-pink-800 transition-all bg-gray-50 dark:bg-gray-700 text-gray-800 dark:text-gray-100"
       />
       <button
         type="submit"
-        className="px-6 py-2 bg-gradient-to-r from-[#ffc8dd] to-[#bde0fe] hover:from-[#ffafcc] hover:to-[#a2d2ff] text-gray-800 font-semibold rounded-xl transition-all shadow-sm hover:shadow-md"
+        className="px-6 py-2.5 bg-gradient-to-r from-pink-200 to-blue-200 dark:from-pink-700 dark:to-blue-700 hover:from-pink-300 hover:to-blue-300 dark:hover:from-pink-600 dark:hover:to-blue-600 text-gray-800 dark:text-white font-semibold rounded-2xl transition-all shadow-sm hover:shadow-md"
       >
         Add
       </button>

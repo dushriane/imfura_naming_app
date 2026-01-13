@@ -12,16 +12,16 @@ export async function POST(request: NextRequest) {
     // For now, return a curated list based on common names with simulated scoring
     
     const suggestions = [
-      { name: 'Imena', meaning: 'A blessing from above', origin: 'Kinyarwanda', score: 0.95 },
-      { name: 'Ishimwe', meaning: 'Gratitude, thanksgiving', origin: 'Kinyarwanda', score: 0.92 },
-      { name: 'Amahoro', meaning: 'Peace', origin: 'Kinyarwanda', score: 0.88 },
-      { name: 'Mugisha', meaning: 'Blessing', origin: 'Kinyarwanda', score: 0.85 },
-      { name: 'Uwase', meaning: 'Be healed/saved', origin: 'Kinyarwanda', score: 0.82 },
-      { name: 'Shema', meaning: 'Be prosperous', origin: 'Kinyarwanda', score: 0.80 },
-      { name: 'Ukuri', meaning: 'Truth', origin: 'Kinyarwanda', score: 0.78 },
-      { name: 'Izuba', meaning: 'Sun', origin: 'Kinyarwanda', score: 0.75 },
-      { name: 'Maria', meaning: 'Bitter sea / beloved', origin: 'Hebrew/Christian', score: 0.90 },
-      { name: 'Yohani', meaning: 'God is gracious', origin: 'Hebrew/Christian', score: 0.87 },
+      { name: 'Imena', meaning: 'A blessing from above', origin: 'Kinyarwanda', score: 0.95, gender: 'unisex' },
+      { name: 'Ishimwe', meaning: 'Gratitude, thanksgiving', origin: 'Kinyarwanda', score: 0.92, gender: 'unisex' },
+      { name: 'Amahoro', meaning: 'Peace', origin: 'Kinyarwanda', score: 0.88, gender: 'unisex' },
+      { name: 'Mugisha', meaning: 'Blessing', origin: 'Kinyarwanda', score: 0.85, gender: 'unisex' },
+      { name: 'Uwase', meaning: 'Be healed/saved', origin: 'Kinyarwanda', score: 0.82, gender: 'female' },
+      { name: 'Shema', meaning: 'Be prosperous', origin: 'Kinyarwanda', score: 0.80, gender: 'male' },
+      { name: 'Ukuri', meaning: 'Truth', origin: 'Kinyarwanda', score: 0.78, gender: 'unisex' },
+      { name: 'Izuba', meaning: 'Sun', origin: 'Kinyarwanda', score: 0.75, gender: 'unisex' },
+      { name: 'Maria', meaning: 'Bitter sea / beloved', origin: 'Hebrew/Christian', score: 0.90, gender: 'female' },
+      { name: 'Yohani', meaning: 'God is gracious', origin: 'Hebrew/Christian', score: 0.87, gender: 'male' },
     ];
 
     // Simple filtering based on preferences

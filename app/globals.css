@@ -15,9 +15,19 @@
     --text-secondary: #4a5568;
   }
   
+  .dark {
+    --bg-light: #1a1a2e;
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+  }
+  
   body {
     background: linear-gradient(135deg, #fef6fb 0%, #ffffff 50%, #f0f9ff 100%);
     background-attachment: fixed;
     color: var(--text-primary);
+  }
+  
+  .dark body {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
   }
 }

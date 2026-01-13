@@ -6,12 +6,13 @@ import FilterControls from "./components/FilterControls";
 import AIQueryBox from "./components/AIQueryBox";
 import ResultsPanel from "./components/ResultsPanel";
 import LegacyCard from "./components/LegacyCard";
+import DarkModeToggle from "./components/DarkModeToggle";
 
 export default function Home() {
   const [siblings, setSiblings] = useState<string[]>([]);
   const [weights, setWeights] = useState({ christian: 0.33, traditional: 0.33, modern: 0.34 });
   const [prompt, setPrompt] = useState("");
-  const [suggestions, setSuggestions] = useState<Array<{ name: string; meaning?: string; origin?: string; score?: number }>>([]);
+  const [suggestions, setSuggestions] = useState<Array<{ name: string; meaning?: string; origin?: string; score?: number; gender?: 'male' | 'female' | 'unisex' }>>([]);
   const [selectedName, setSelectedName] = useState<string | null>(null);
   const [details, setDetails] = useState<any | null>(null);
   const [loading, setLoading] = useState(false);
@@ -66,12 +67,14 @@ export default function Home() {
 
   return (
     <main className="min-h-screen w-full flex flex-col pb-12">
-      <section className="p-4 md:p-8">
+      <DarkModeToggle />
+      
+      <section className="p-4 md:p-8 max-w-6xl mx-auto w-full">
         <HeroScene />
       </section>
 
-      <section className="px-4 md:px-8 mt-4 grid grid-cols-1 lg:grid-cols-3 gap-6 w-full max-w-7xl mx-auto">
-        <div className="lg:col-span-2 space-y-4">
+      <section className="px-6 md:px-8 mt-4 grid grid-cols-1 lg:grid-cols-3 gap-6 w-full max-w-6xl mx-auto">
+        <div className="lg:col-span-2 space-y-6">
           <AIQueryBox
             prompt={prompt}
             onPromptChange={setPrompt}
