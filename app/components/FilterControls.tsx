@@ -18,11 +18,17 @@ export default function FilterControls({ weights, onChange }: FilterControlsProp
   };
 
   return (
-    <div className="bg-white rounded-lg shadow p-4">
-      <h3 className="text-lg font-semibold mb-3">Name Style Weights</h3>
-      <div className="space-y-4">
+    <div className="bg-white rounded-2xl shadow-lg border border-pink-200 p-6">
+      <h3 className="text-lg font-bold mb-4 text-gray-800 flex items-center gap-2">
+        <span className="text-2xl">🎨</span>
+        Name Style Weights
+      </h3>
+      <div className="space-y-5">
         <div>
-          <label className="block text-sm font-medium text-gray-700">Christian</label>
+          <div className="flex justify-between items-center mb-2">
+            <label className="text-sm font-semibold text-gray-700">✝️ Christian</label>
+            <span className="text-sm font-bold text-[#ffafcc] bg-[#ffc8dd]/20 px-3 py-1 rounded-full">{Math.round(weights.christian * 100)}%</span>
+          </div>
           <input
             type="range"
             min={0}
@@ -30,12 +36,14 @@ export default function FilterControls({ weights, onChange }: FilterControlsProp
             step={0.01}
             value={weights.christian}
             onChange={e => set("christian", parseFloat(e.target.value))}
-            className="w-full"
+            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#ffafcc]"
           />
-          <p className="text-xs text-gray-500">{Math.round(weights.christian * 100)}%</p>
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700">Traditional / Kinyarwanda</label>
+          <div className="flex justify-between items-center mb-2">
+            <label className="text-sm font-semibold text-gray-700">🏛️ Traditional / Kinyarwanda</label>
+            <span className="text-sm font-bold text-[#a2d2ff] bg-[#bde0fe]/20 px-3 py-1 rounded-full">{Math.round(weights.traditional * 100)}%</span>
+          </div>
           <input
             type="range"
             min={0}
@@ -43,12 +51,14 @@ export default function FilterControls({ weights, onChange }: FilterControlsProp
             step={0.01}
             value={weights.traditional}
             onChange={e => set("traditional", parseFloat(e.target.value))}
-            className="w-full"
+            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#a2d2ff]"
           />
-          <p className="text-xs text-gray-500">{Math.round(weights.traditional * 100)}%</p>
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700">Modern</label>
+          <div className="flex justify-between items-center mb-2">
+            <label className="text-sm font-semibold text-gray-700">⭐ Modern</label>
+            <span className="text-sm font-bold text-[#ffd60a] bg-[#fff4a3]/30 px-3 py-1 rounded-full">{Math.round(weights.modern * 100)}%</span>
+          </div>
           <input
             type="range"
             min={0}
@@ -56,9 +66,8 @@ export default function FilterControls({ weights, onChange }: FilterControlsProp
             step={0.01}
             value={weights.modern}
             onChange={e => set("modern", parseFloat(e.target.value))}
-            className="w-full"
+            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#ffd60a]"
           />
-          <p className="text-xs text-gray-500">{Math.round(weights.modern * 100)}%</p>
         </div>
       </div>
     </div>

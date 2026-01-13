@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --pastel-pink: #ffc8dd;
+    --pastel-blue: #bde0fe;
+    --pastel-yellow: #fff4a3;
+    --pink-dark: #ffafcc;
+    --blue-dark: #a2d2ff;
+    --yellow-dark: #ffd60a;
+    --bg-light: #fef6fb;
+    --text-primary: #2d3748;
+    --text-secondary: #4a5568;
+  }
+  
+  body {
+    background: linear-gradient(135deg, #fef6fb 0%, #ffffff 50%, #f0f9ff 100%);
+    background-attachment: fixed;
+    color: var(--text-primary);
+  }
+}

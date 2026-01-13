@@ -65,12 +65,12 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen w-full flex flex-col">
+    <main className="min-h-screen w-full flex flex-col pb-12">
       <section className="p-4 md:p-8">
         <HeroScene />
       </section>
 
-      <section className="px-4 md:px-8 mt-4 grid grid-cols-1 lg:grid-cols-3 gap-6 w-full">
+      <section className="px-4 md:px-8 mt-4 grid grid-cols-1 lg:grid-cols-3 gap-6 w-full max-w-7xl mx-auto">
         <div className="lg:col-span-2 space-y-4">
           <AIQueryBox
             prompt={prompt}

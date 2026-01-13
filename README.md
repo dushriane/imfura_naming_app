@@ -60,8 +60,33 @@ npm run dev
 1. **Enter a Prompt**: Describe themes (e.g., "gratitude, faith, nature") or mention prefixes/suffixes
 2. **Add Siblings**: Enter existing children's names for harmonious suggestions
 3. **Adjust Weights**: Use sliders to balance Christian, Traditional, and Modern influences
-4. **Generate**: Click "Generate Name Ideas" to get AI suggestions
-5. **Explore**: Click any suggested name to view its full Legacy Card with meaning, saint, and notable figures
+   - Christian: Increases weight for biblical/saint names
+   - Traditional: Favors Kinyarwanda cultural names
+   - Modern: Balances contemporary appeal
+4. **Generate**: Click "Generate Name Ideas" to get suggestions
+5. **Explore**: Click any suggested name to view its full Legacy Card with:
+   - **Meaning**: Etymology and cultural significance
+   - **Patron Saint**: Feast day, patronage, and description (for Catholic families)
+   - **Notable Figures**: Famous people with the same name
+
+### Example Workflow
+
+```
+Prompt: "Names about gratitude and blessings for our third child"
+Siblings: Imena, Mugisha
+Weights: Christian 40%, Traditional 50%, Modern 10%
+→ Suggestions: Ishimwe (Gratitude), Shema (Be Prosperous), Imena (Blessing)
+→ Click "Ishimwe" to see Saint details and notable Rwandans named Ishimwe
+```
+
+## Build Notes
+
+**Development**: Run `npm run dev` - fully functional with hot reload
+
+**Production Build**: Currently encountering a known Next.js 16 Turbopack prerendering issue with `_global-error`. The app works perfectly in dev mode. For production deployment, consider:
+- Downgrading to Next.js 15.x
+- Waiting for Next.js 16.x patch
+- Using `output: 'standalone'` or disabling static generation
 
 ## Project Structure
 
