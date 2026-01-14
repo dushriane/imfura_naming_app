@@ -43,14 +43,12 @@ export default function Home() {
     setSelectedName(name);
     setDetails(null);
     try {
-      // Fetch saint and notable figures in parallel
       const [saintsRes, notablesRes] = await Promise.all([
         fetch(`/api/saints?name=${encodeURIComponent(name)}`),
         fetch(`/api/notables?name=${encodeURIComponent(name)}`),
       ]);
       const [saint, notables] = await Promise.all([saintsRes.json(), notablesRes.json()]);
 
-      // Basic meaning: if suggestion had meaning, use it; else ask server for a lightweight explanation
       const suggestion = suggestions.find(s => s.name === name);
       let meaning = suggestion?.meaning;
       if (!meaning) {
@@ -66,14 +64,14 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen w-full flex flex-col pb-12">
+    <div className="container mx-auto p-4 max-w-7xl">
       <DarkModeToggle />
       
-      <section className="p-4 md:p-8 max-w-6xl mx-auto w-full">
+      <div className="mb-6">
         <HeroScene />
-      </section>
+      </div>
 
-      <section className="px-6 md:px-8 mt-4 grid grid-cols-1 lg:grid-cols-3 gap-6 w-full max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2 space-y-6">
           <AIQueryBox
             prompt={prompt}
@@ -97,7 +95,7 @@ export default function Home() {
             />
           )}
         </div>
-      </section>
-    </main>
+      </div>
+    </div>
   );
 }
