@@ -1,5 +1,5 @@
 // Embeddings logic for semantic search and name matching
-// This would integrate with OpenAI embeddings or similar
+// This can integrate with OpenRouter-compatible embedding models
 
 export interface Embedding {
   name: string;
@@ -8,7 +8,7 @@ export interface Embedding {
 }
 
 export async function generateEmbedding(text: string): Promise<number[]> {
-  // TODO: Implement OpenAI embeddings API call
+  // TODO: Implement embedding API call through your selected provider
   // For now, return a placeholder
   return new Array(1536).fill(0);
 }

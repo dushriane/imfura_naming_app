@@ -1,6 +1,20 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import { HeroUIProvider } from './providers'
+import HeroUIProvider from './providers'
+import { Nunito_Sans, Poppins } from 'next/font/google'
+
+// Load fonts with CSS variables
+const nunito = Nunito_Sans({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-nunito',
+})
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800'],
+  display: 'swap',
+  variable: '--font-poppins',
+})
 
 export const metadata: Metadata = {
   title: 'Imfura Name Oracle',
@@ -13,13 +27,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${nunito.variable} ${poppins.variable}`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+        {/* Remove external Google Fonts <link> tags; next/font handles loading */}
       </head>
-      <body className="font-sans">
+      <body className={`${nunito.variable} ${poppins.variable}`}>
         <HeroUIProvider>
           {children}
         </HeroUIProvider>

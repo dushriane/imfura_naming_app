@@ -24,8 +24,20 @@ export default function SiblingInput({ onAdd }: SiblingInputProps) {
         onValueChange={setValue}
         placeholder="Enter sibling name"
         className="flex-1"
+        variant="flat"
+        radius="lg"
+        classNames={{
+          input: "font-[var(--font-nunito-sans)] bg-default-100",
+        }}
       />
-      <Button type="submit" color="secondary">
+      <Button
+        type="submit"
+        className="rounded-full px-6 text-white"
+        style={{
+          backgroundImage:
+            "linear-gradient(90deg, rgba(99,102,241,1) 0%, rgba(236,72,153,1) 100%)",
+        }}
+      >
         Add
       </Button>
     </form>

@@ -25,6 +25,11 @@ export default function AIQueryBox({ prompt, onPromptChange, siblings, onAddSibl
           onValueChange={onPromptChange}
           placeholder="Describe the themes: gratitude, faith, nature; or add prefixes/suffixes..."
           minRows={4}
+          variant="flat"
+          radius="lg"
+          classNames={{
+            input: "font-[var(--font-nunito-sans)] bg-default-100",
+          }}
         />
 
         <div>
@@ -48,10 +53,14 @@ export default function AIQueryBox({ prompt, onPromptChange, siblings, onAddSibl
 
         <div className="flex justify-end">
           <Button
-            color="secondary"
             size="lg"
             onClick={onGenerate}
             isLoading={loading}
+            className="rounded-full py-6 text-white"
+            style={{
+              backgroundImage:
+                "linear-gradient(90deg, rgba(99,102,241,1) 0%, rgba(236,72,153,1) 100%)",
+            }}
           >
             Generate Name Ideas
           </Button>

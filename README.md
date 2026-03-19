@@ -23,7 +23,7 @@ Imfura Naming App helps parents discover meaningful Rwandan names that blend:
 ✅ **Mobile Responsive** - Full touch-friendly interface for all devices
 
 ### Planned Features (Coming Soon)
-🚧 LLM Integration - OpenAI GPT-4o or Anthropic Claude 3.5 for intelligent suggestions
+✅ LLM Integration - OpenRouter API for intelligent suggestions
 🚧 Vector Embeddings - Pinecone/pgvector for semantic name similarity
 🚧 Wikipedia/Wikidata API - Real-time lookup of notable Rwandans and global figures
 🚧 Hagiography API - Catholic saint database integration
@@ -33,7 +33,7 @@ Imfura Naming App helps parents discover meaningful Rwandan names that blend:
 
 ### Prerequisites
 - Node.js 18+ and npm
-- (Optional) OpenAI or Anthropic API key for future AI features
+- OpenRouter API key
 
 ### Installation
 
@@ -48,12 +48,21 @@ cd imfura_naming_app
 npm install
 ```
 
-3. Run the development server:
+3. Configure environment variables:
+```bash
+OPENROUTER_API_KEY=your_openrouter_api_key
+# Optional
+OPENROUTER_MODEL=meta-llama/llama-3.3-70b-instruct
+OPENROUTER_SITE_URL=http://localhost:3000
+OPENROUTER_APP_NAME=Imfura Naming App
+```
+
+4. Run the development server:
 ```bash
 npm run dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
+5. Open [http://localhost:3000](http://localhost:3000) in your browser
 
 ### Usage Guide
 
@@ -117,7 +126,7 @@ lib/
 - **Framework**: Next.js 16 (App Router, Turbopack)
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
-- **AI** (planned): OpenAI GPT-4o / Anthropic Claude 3.5
+- **AI**: OpenRouter API (model configurable via `OPENROUTER_MODEL`)
 - **Vector DB** (planned): Pinecone or pgvector
 
 ## Contributing

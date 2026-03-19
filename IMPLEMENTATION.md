@@ -16,7 +16,7 @@
 
 ## ✅ Completed API Routes (4 Total)
 
-1. **POST /api/generate** - Returns 10 name suggestions with scoring based on preferences
+1. **POST /api/generate** - Uses OpenRouter to generate 10 name suggestions based on prompt, siblings, and preference weights
 2. **GET /api/saints?name=X** - Searches saints-data.json for matching Catholic saints
 3. **GET /api/notables?name=X** - Returns notable figures (stubbed for Wikipedia API)
 4. **GET /api/meaning?name=X** - Returns name etymology and meaning
@@ -48,10 +48,10 @@ All components use Tailwind responsive classes:
 - **Sticky sidebar** - Legacy card stays visible while scrolling on desktop
 - **Loading states** - Disabled button and loading text during generation
 
-## 📝 Ready for LLM Integration
+## 📝 AI Integration Status
 
-All API routes have clear TODO comments marking where to integrate:
-- OpenAI/Anthropic for name generation
+Completed and remaining AI integrations:
+- OpenRouter integration for name generation is implemented in `/api/generate`
 - Wikipedia/Wikidata API for real notable figures
 - Vector embeddings for semantic similarity
 - Hagiography API for expanded saint database
